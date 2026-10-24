@@ -23,7 +23,7 @@ export async function POST(req) {
     const pathname = `uploads/${user.id}/${Date.now()}-${safeName}`;
 
     const blob = await put(pathname, file, {
-      access: 'private',
+      access: 'public',
       contentType: file.type || 'application/octet-stream',
     });
 

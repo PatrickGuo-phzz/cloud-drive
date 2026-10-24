@@ -227,7 +227,7 @@ function fileRow(f) {
   info.className = 'file-info';
   const name = document.createElement('a');
   name.className = 'file-name';
-  name.href = `/api/files/${f.id}`;
+  name.href = f.blob_url;
   name.target = '_blank';
   name.rel = 'noopener';
   name.title = f.filename;
@@ -242,7 +242,7 @@ function fileRow(f) {
 
   const open = document.createElement('a');
   open.className = 'icon-btn';
-  open.href = `/api/files/${f.id}`;
+  open.href = f.blob_url;
   open.target = '_blank';
   open.rel = 'noopener';
   open.title = '在新标签页打开';
@@ -253,7 +253,7 @@ function fileRow(f) {
   copy.className = 'icon-btn';
   copy.title = '复制链接';
   copy.textContent = '🔗';
-  copy.addEventListener('click', () => copyLink(`${location.origin}/api/files/${f.id}`));
+  copy.addEventListener('click', () => copyLink(f.blob_url));
 
   const del = document.createElement('button');
   del.type = 'button';
