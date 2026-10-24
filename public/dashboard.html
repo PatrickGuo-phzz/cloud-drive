@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的文件 — 云盒 CloudBox</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/"><span class="brand-mark">📦</span> 云盒 <span class="brand-en">CloudBox</span></a>
+      <div class="nav-user">
+        <span class="avatar" id="nav-avatar">?</span>
+        <span class="nav-username" id="nav-username">…</span>
+        <button class="btn btn-ghost btn-sm" id="logout-btn" type="button">退出登录</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container dash">
+    <header class="dash-head">
+      <h1>我的文件</h1>
+      <p class="muted" id="user-email"></p>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card card">
+        <div class="stat-value" id="stat-count">–</div>
+        <div class="stat-label">文件总数</div>
+      </div>
+      <div class="stat-card card">
+        <div class="stat-value" id="stat-size">–</div>
+        <div class="stat-label">已用空间</div>
+      </div>
+      <div class="stat-card card">
+        <div class="stat-value">4 MB</div>
+        <div class="stat-label">单文件大小上限</div>
+      </div>
+    </section>
+
+    <section class="card upload-card">
+      <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="上传文件">
+        <div class="dropzone-icon">☁️</div>
+        <div class="dropzone-title">点击选择文件，或拖拽到此处</div>
+        <div class="dropzone-hint">支持多文件上传 · 单文件不超过 4 MB</div>
+        <input type="file" id="file-input" multiple hidden />
+      </div>
+      <div class="upload-queue" id="upload-queue"></div>
+    </section>
+
+    <section class="card files-card">
+      <div class="files-head">
+        <h2>文件列表</h2>
+        <button class="btn btn-ghost btn-sm" id="refresh-btn" type="button">↻ 刷新</button>
+      </div>
+      <div id="file-list" class="file-list">
+        <div class="empty">
+          <div class="empty-icon"><span class="spinner spinner-lg"></span></div>
+          <div class="empty-text">加载中…</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toasts" class="toasts"></div>
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

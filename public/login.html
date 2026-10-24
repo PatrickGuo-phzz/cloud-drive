@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登录 — 云盒 CloudBox</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <div class="auth-card card">
+      <a class="brand brand-center" href="/"><span class="brand-mark">📦</span> 云盒 <span class="brand-en">CloudBox</span></a>
+      <h1 class="auth-title">欢迎回来</h1>
+      <p class="auth-sub">登录后管理你的云端文件</p>
+
+      <div id="form-alert" class="alert alert-error hidden" role="alert"></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="identifier">邮箱或用户名</label>
+          <input id="identifier" name="identifier" type="text" autocomplete="username"
+                 placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label for="password">密码</label>
+          <input id="password" name="password" type="password" autocomplete="current-password"
+                 placeholder="请输入密码" required />
+        </div>
+        <button id="submit-btn" class="btn btn-primary btn-block" type="submit">登 录</button>
+      </form>
+
+      <p class="auth-alt">还没有账号？<a href="/register">免费注册</a></p>
+      <p class="auth-alt"><a class="muted-link" href="/">← 返回首页</a></p>
+    </div>
+  </main>
+
+  <div id="toasts" class="toasts"></div>
+  <script src="/js/api.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

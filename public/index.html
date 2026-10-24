@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>云盒 CloudBox — 简单的云端文件管理</title>
+  <meta name="description" content="注册你的账号，把文件拖进浏览器，即可安全地存储在云端。" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/"><span class="brand-mark">📦</span> 云盒 <span class="brand-en">CloudBox</span></a>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="/login" id="nav-login">登录</a>
+        <a class="btn btn-primary" href="/register" id="nav-register">免费注册</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="pill">Next.js · Vercel Postgres · Vercel Blob</span>
+          <h1>把文件放进<span class="accent">云盒</span>，<br />随时随地取用</h1>
+          <p class="hero-sub">
+            注册你的专属账号，把文件拖进浏览器即可安全存储在云端。
+            支持在线预览、复制链接、随时删除。
+          </p>
+          <div class="hero-cta" id="hero-cta">
+            <a class="btn btn-primary btn-lg" href="/register">免费开始使用</a>
+            <a class="btn btn-ghost btn-lg" href="/login">已有账号，登录</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="mock-window">
+            <div class="mock-titlebar"><span></span><span></span><span></span></div>
+            <div class="mock-body">
+              <div class="mock-dropzone">⬆️ 拖拽文件到此处上传</div>
+              <div class="mock-row">
+                <span class="mock-icon">🖼️</span>
+                <span class="mock-line w55"></span>
+                <span class="mock-line w15"></span>
+              </div>
+              <div class="mock-row">
+                <span class="mock-icon">📕</span>
+                <span class="mock-line w40"></span>
+                <span class="mock-line w12"></span>
+              </div>
+              <div class="mock-row">
+                <span class="mock-icon">🎵</span>
+                <span class="mock-line w62"></span>
+                <span class="mock-line w18"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="feature-card card">
+        <div class="feature-icon">🔐</div>
+        <h3>账号安全</h3>
+        <p>密码使用 bcrypt 加密存储，会话基于 HttpOnly Cookie，绝不明文保存你的密码。</p>
+      </div>
+      <div class="feature-card card">
+        <div class="feature-icon">☁️</div>
+        <h3>拖拽上传</h3>
+        <p>把文件拖进虚线框即可上传，多文件排队、实时进度条，上传完立刻出现在列表里。</p>
+      </div>
+      <div class="feature-card card">
+        <div class="feature-icon">🗄️</div>
+        <h3>云端存储</h3>
+        <p>文件保存在 Vercel Blob，元数据记录在 Vercel Postgres，随时打开、下载或复制链接。</p>
+      </div>
+      <div class="feature-card card">
+        <div class="feature-icon">🧹</div>
+        <h3>轻量管理</h3>
+        <p>按时间倒序查看自己的文件，一键删除时云端对象与记录同步清理，互不可见他人文件。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      云盒 CloudBox · 基于 Next.js / Vercel Postgres / Vercel Blob 构建
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

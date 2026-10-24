@@ -1,0 +1,25 @@
+{
+  "name": "cloud-drive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "云盒 CloudBox —— 用户注册登录 + 文件上传（Next.js API + Vercel Postgres + Vercel Blob）",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "bcryptjs": "^3.0.3",
+    "next": "^16.4.3",
+    "postgres": "^3.4.9",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "overrides": {
+    "zod": "^4.6.6"
+  }
+}
