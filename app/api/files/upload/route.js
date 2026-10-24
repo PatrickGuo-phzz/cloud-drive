@@ -13,13 +13,6 @@ export async function POST(req) {
     const user = await getUser(req);
     if (!user) return jsonError('请先登录', 401);
 
-    if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      return jsonError(
-        '未配置 BLOB_READ_WRITE_TOKEN：请先在 Vercel 控制台创建 Blob 存储并连接到本项目（参见 README）',
-        500
-      );
-    }
-
     const form = await req.formData();
     const file = form.get('file');
     if (!file || typeof file === 'string') return jsonError('没有收到文件', 400);
